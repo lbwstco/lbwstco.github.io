@@ -1,0 +1,26 @@
+---
+layout: default
+title: 文章归档
+header : Post Archive
+group: navigation
+---
+{% include JB/setup %}
+
+<p class="lotus-breadcrub">
+        <a href="{{ site.url }}/index.html" rel="nofollow" rel="nofollow" title="首页">Home</a>
+    <span> &gt; </span>
+    {{ page.title }}
+</p>
+
+<h1 class="lotus-pagetit">Archive</h1>
+
+{% for category in site.categories %}
+<h2>{{ category | first }}</h2>
+<ul class="arc-list">
+    {% for post in category.last %}
+        <li>{{ post.date | date:"%Y-%m-%d"}}&nbsp;&nbsp;<a href="{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+{% include JB/posts_collate %}
