@@ -1,6 +1,6 @@
 markdown: redcarpet
 pygments: true
-plugins: ./_plugins
+plugins_dir: ./_plugins
 paginate: 8
 
 safe: false
